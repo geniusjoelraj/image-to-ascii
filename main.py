@@ -1,10 +1,12 @@
 from PIL import Image, ImageOps
 
+image_path="/home/tensai/Pictures/ASCII_logo.png"
 quality=100
 kanji="鬱森冊花代日三二一丶 "
 ascii="#$%*(/=+_~-`,."
-kanji_inverse=" 丶一二三日代花冊森鬱"
-chars=kanji_inverse
+ascii_inverse=ascii[::-1]
+kanji_inverse=kanji[::-1]
+chars=ascii
 
 def resize_img(img):
     width, height=img.size
@@ -13,7 +15,7 @@ def resize_img(img):
     width=int(height*aspect_ratio)
     return img.resize((width, height))
 
-with Image.open("/home/tensai/Pictures/why-do-people-believe-gear-5-was-planned-since-chapter-one-v0-2frel64qveja1.webp") as im:
+with Image.open(image_path) as im:
     im=im.rotate(90,expand=True)
     im=im.transpose(method=Image.Transpose.FLIP_TOP_BOTTOM)
     im=ImageOps.grayscale(im)
@@ -27,7 +29,7 @@ with Image.open("/home/tensai/Pictures/why-do-people-believe-gear-5-was-planned-
             index=intensity*(len(chars)-1)//255
             if chars[index]==" ":
                 arr.append(" ")
-            arr.append(chars[index])
+            arr.append(chars[index]+" ")
         arr.append("\n")
     image="".join(arr)
 print(image)
