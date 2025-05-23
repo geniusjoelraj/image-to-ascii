@@ -7,8 +7,18 @@ This python script converts any image into ascii art using a set of ascii charac
 - Adjustable quality(by changing the quality variable)
 - Use custom characters to render the image
 
+## New Feature
+- Generate colored ASCII art
+- Better greyscale ASCII art generation
+
 ## Example output
 ![ascii image](./images/ascii_ss.png)
+
+## Colored Example
+![colored](./images/colored-ascii.png)
+
+![greyscale](./images/black-and-white.png)
+
 
 ## Requirements
 - python 3.x

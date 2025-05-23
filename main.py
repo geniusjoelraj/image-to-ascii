@@ -2,7 +2,7 @@ from PIL import Image, ImageOps
 import sys
 import colors
 
-colored=True
+colored=False
 
 def resize_img(img,quality):
     width, height=img.size
